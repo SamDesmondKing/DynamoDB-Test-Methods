@@ -23,7 +23,7 @@ public class QueryData {
 
         AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
             .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
-		.withCredentials(new ProfileCredentialsProvider("adminuser"))
+		.withCredentials(new ProfileCredentialsProvider("default"))
             .build();
 
         DynamoDB dynamoDB = new DynamoDB(client);
@@ -68,7 +68,7 @@ public class QueryData {
             .withValueMap(valueMap);
 
         try {
-            System.out.println("Movies from 1992 - titles A-L, with genres and lead actor");
+            System.out.println("\nMovies from 1992 - titles A-L, with genres and lead actor");
             items = table.query(querySpec);
 
             iterator = items.iterator();

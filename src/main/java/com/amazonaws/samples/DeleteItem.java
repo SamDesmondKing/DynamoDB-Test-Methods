@@ -29,9 +29,7 @@ public class DeleteItem {
         int year = 2015;
         String title = "The Big New Movie";
 
-        DeleteItemSpec deleteItemSpec = new DeleteItemSpec()
-            .withPrimaryKey(new PrimaryKey("year", year, "title", title)).withConditionExpression("info.rating <= :val")
-            .withValueMap(new ValueMap().withNumber(":val", 5.0));
+        DeleteItemSpec deleteItemSpec = new DeleteItemSpec().withPrimaryKey(new PrimaryKey("year", year, "title", title)).withConditionExpression("info.rating <= :val").withValueMap(new ValueMap().withNumber(":val", 7.0));
 
         // Conditional delete (we expect this to fail)
 
